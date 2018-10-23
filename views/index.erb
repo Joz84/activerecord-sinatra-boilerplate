@@ -1,0 +1,19 @@
+<h1>Mes restaurants favoris</h1>
+
+<%= Time.now %>
+
+<h2>Nouveau restaurant</h2>
+<form action="/restaurants" method="post">
+  <label for="name">Name</label>
+  <input type="text" name="name">
+  <label for="address">Adresse</label>
+  <input type="text" name="address">
+  <input type="submit">
+</form>
+
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li><a href="/restaurant/<%= restaurant.id %>"><%= restaurant.name %></a></li>
+  <% end %>
+</ul>
